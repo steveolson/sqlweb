@@ -1,0 +1,24 @@
+#
+# Oracle Makefile for Oracle 8.0.5
+#
+# to compile SQLWeb, type:  make sqlweb
+#
+XCC	=gcc
+XCFLAGS	=-I. -I../../include -I$(ORACLE_HOME)/rdbms/demo -I$(ORACLE_HOME)/rdbms/public -I/usr/lib/gcc-lib/i386-redhat-linux7/2.96/include
+#XLDFLAGS=-L../../lib -lSQLweb -llist $(TTLIBS) $(LDLIBS) $(SYSLIBS)
+XLDFLAGS=-L../../lib -lSQLweb -llist -L/lib \
+-L/usr/lib/gcc-lib/i386-redhat-linux7/2.96/lib -L${ORACLE_HOME}/lib \
+${ORACLE_HOME}/lib/naect.o \
+${ORACLE_HOME}/lib/nautab.o $(OCISTATICLIBS) -ln10
+
+sqlweb:		oradb.o ../../lib/libSQLweb.a 
+	$(XCC) $(XCFLAGS) -o sqlweb ../../lib/swmain.o oradb.o $(XLDFLAGS)
+oradb.o:	oradb.c
+	$(XCC) $(XCFLAGS) -c oradb.c
+oradb:		oradb.c
+	$(XCC) $(XCFLAGS) -DMAIN_TEST -c oradb.c
+	$(XCC) $(XCFLAGS) -o oradb oradb.o $(XLDFLAGS)
+	rm oradb.o
+
+include ${ORACLE_HOME}/rdbms/lib/env_rdbms.mk
+include ${ORACLE_HOME}/rdbms/lib/ins_rdbms.mk
