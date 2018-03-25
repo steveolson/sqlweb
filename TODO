@@ -1,0 +1,8 @@
+1.  Improve Memory management so that SQLweb can be invoked as Apache Module
+2.  More file functions in EXPR parser:
+	open, close, put[line], get[line], append, access, ... 
+3.  GetTag (@ operator added to EXPR parser)
+4.  Long/Blob fetch loop witihin row fetch
+
+*** 2.2.0 ***
+Fixup template SQLweb.ini file
