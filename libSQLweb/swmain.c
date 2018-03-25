@@ -58,7 +58,8 @@ main(int    argc
 /*	 bCFlag=eTrue	/* Cook Page */
 /*	;
  */
-    ctSetup();
+    /*ctSetup();
+     */
 
     gpProgram = strrchr(argv[0],'/');
     if(gpProgram) gpProgram++;

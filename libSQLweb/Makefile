@@ -16,7 +16,8 @@ CC	=gcc
 CFLAGS	=-I../include -g 
 YFLAGS	=-dv
 #LDFLAGS	=libSQLweb.a -L../lib -llist -lsocket -lmalloc
-LDFLAGS	=libSQLweb.a -L../lib -llist -lsocket
+# LDFLAGS	=libSQLweb.a -L../lib -llist -lsocket
+LDFLAGS	=libSQLweb.a -L../lib -llist
 INC	=boolean.h	\
 	 sqlweb.h	\
 	 sqlwebdb.h	\
