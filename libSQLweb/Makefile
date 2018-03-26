@@ -87,6 +87,6 @@ install:		$(LIB) $(MAIN)
 	cp $(MAIN) $(LIB_INSTALL_DIR)
 	cp $(INC) ifparse.h $(INC_INSTALL_DIR)
 clean:
-	-rm -f *.o $(LIB) ifparse.c y.tab.[ch] y.output sqlweb
+	-rm -f *.o $(LIB) ifparse.[ch] y.tab.[ch] y.output sqlweb
 
 
